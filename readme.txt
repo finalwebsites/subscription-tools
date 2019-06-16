@@ -1,12 +1,12 @@
-=== Sendy Subscription Plus ===
+=== Sendy Subscriptions ===
 Contributors: finalwebsites
-Donate link: http://www.finalwebsites.com/
+Donate link: https://www.finalwebsites.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: sendy, subscription, subscribe form, ajax forms, email marketing, mailing list, forms, api, ajax, email form, shortcode, clicky, Google Analytics, tracking
 Requires at least: 4.0
-Tested up to: 4.8.1
-Stable tag: 1.0.2.3
+Tested up to: 5.2.1
+Stable tag: 1.0.0
 
 Increase the count of new subscribers for your blog or website by using Sendy and a professional subscription form.
 
@@ -43,9 +43,9 @@ The quickest method for installing the Sendy subscription form is:
 
 == Frequently Asked Questions ==
 
-= The subscription form doesn't work, the first name isn't passed to the MailChimp list =
+= The subscription form doesn't work, the secondary name isn't passed to the mailinng list =
 
-Compare the merge fields you're using for the plugin settings and for your MailChimp mailing list. They need to be identical, use only the characters between the pipe symbols (|), check the [MC manual](http://kb.mailchimp.com/lists/managing-subscribers/manage-list-and-signup-form-fields) for information how to add additional merge fields
+Compare the merge fields you're using for the plugin settings and for your Sendy mailing list. They need to be identical, use only the characters from the  "Personalization tag"
 
 = How to add a manual goal in Clicky? =
 
@@ -56,12 +56,8 @@ If you use a Clicky premium plan it's possible to track Goals.
 1. Check the "Manual Goal" checkbox and click Submit
 1. Copy/paste the ID into the corresponding field on the plugin options page
 
-= I get an fatal error during plugin activation =
-
-The Mailchimp wrapper class is written for PHP5 and doesn't work for old and unsafe PHP versions. The error is related to the namespace declaration at the top of the class script. To solve that error, you need to move to a better webhost which supports PHP5.3x or higher.
-
 == Screenshots ==
-1. Settings for the *MailChimp Subscription Plus* plugin.
+1. Settings for the *Sendy Subscriptions* plugin.
 2. An example how the subscription form looks like.
 3. Subscription form widget (Made together with the theme called "The Bootstrap")
 
