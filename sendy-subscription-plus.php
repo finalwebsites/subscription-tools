@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Sendy Subscription Plus
+Plugin Name: Sendy Subscriptions
 Version: 1.0.0
 Plugin URI: http://www.finalwebsites.com/
 Description: Increase the count of new subscribers for your blog or website by using Sendy and a professional subscription form.
@@ -29,44 +29,44 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
 
-include_once WP_PLUGIN_DIR.'/sendy-subscription-plus/include/options.php';
-include_once WP_PLUGIN_DIR.'/sendy-subscription-plus/include/form-shortcodes.php';
-include_once WP_PLUGIN_DIR.'/sendy-subscription-plus/include/widget.php';
+include_once WP_PLUGIN_DIR.'/sendy-Subscriptions/include/options.php';
+include_once WP_PLUGIN_DIR.'/sendy-subscriptions/include/form-shortcodes.php';
+include_once WP_PLUGIN_DIR.'/sendy-subscriptions/include/widget.php';
 
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Sendy_Subscription_Plus {
-	
+
 	public function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'init' ) );
 	}
-	
+
 	public function init() {
 		load_plugin_textdomain( 'fws_sendy_subscribe', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-		
+
 		add_filter( 'the_content', array($this, 'add_form_to_content'), 20 );
-		
+
 		add_action('wp_enqueue_scripts', array($this, 'add_assets'));
-		
+
 		add_action( 'wp_ajax_subscribeform_action', array($this, 'subform_action_callback') );
 		add_action( 'wp_ajax_nopriv_subscribeform_action', array($this, 'subform_action_callback') );
-		
+
 		add_action( 'wp_ajax_unsubscribe_action', array($this, 'unsubscribe_action_callback') );
 		add_action( 'wp_ajax_nopriv_unsubscribe_action', array($this, 'unsubscribe_action_callback') );
-		
+
 		add_action('wp_ajax_mailmunch_action', array($this, 'process_mailmunch_request'));
 		add_action('wp_ajax_nopriv_mailmunch_action', array($this, 'process_mailmunch_request'));
-		
+
 		$current_screen = get_current_screen();
 		if ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor()) {
-			
+
 		} else {
 			add_action('add_meta_boxes', array($this, 'add_custom_box'));
 			add_action('save_post', array($this, 'save_custom_box'));
 		}
 	}
-	
+
 	public function add_assets() {
 		global $post;
 		$show = false;
@@ -111,7 +111,7 @@ class Sendy_Subscription_Plus {
 			}
 		}
 	}
-	
+
 	public function make_api_call($data, $action = 'subscribe') {
 		$url = get_option('fws_sendy_url');
 		$list = get_option('fws_sendy_list_id');
@@ -185,7 +185,7 @@ class Sendy_Subscription_Plus {
 				$data['name'] = sanitize_text_field($_POST['name']);
 				$data['email'] = sanitize_email($_POST['email']);
 				$data['referrer'] = home_url( $wp->request );
-				
+
 				$sec_name = get_option('fws_sendy_sec_name');
 				if (isset($data[$sec_name])) {
 					$data[$sec_name] = sanitize_text_field($_POST[$sec_name]);
@@ -207,7 +207,7 @@ class Sendy_Subscription_Plus {
 		echo json_encode($resp);
 		die();
 	}
-	
+
 	public function unsubscribe_action_callback() {
 		$error = '';
 		$status = 'error';
@@ -220,7 +220,7 @@ class Sendy_Subscription_Plus {
 			} else {
 				$data = array();
 				$data['email'] = sanitize_email($_POST['email']);
-				
+
 				$result = $this->make_api_call($data, 'unsubscribe');
 
 				if ($result == 'true') {
@@ -237,7 +237,7 @@ class Sendy_Subscription_Plus {
 		echo json_encode($resp);
 		die();
 	}
-	
+
 	public function process_mailmunch_request() {
 		$text = '';
 		if ($this->mailmunch_secure_request()) {
@@ -247,35 +247,35 @@ class Sendy_Subscription_Plus {
 			$data['referrer'] = sanitize_text_field($_POST['referral']);
 			$text .= implode(PHP_EOL, $data);
 			$resp = $this->make_api_call($data, 'mailmunch');
-			
+
 			$text .= PHP_EOL.'Sendy: '.$resp;
 		}
 		file_put_contents(WP_PLUGIN_DIR.'/sendy-subscription-plus/test.log', PHP_EOL.$text, FILE_APPEND);
 		die();
 	}
-	
+
 	public function add_custom_box() {
 		$screens = array('post', 'page');
 		foreach ($screens as $screen) {
 			add_meta_box(
-				'fws_sendy_box_id', 
+				'fws_sendy_box_id',
 				'Sendy options',
-				array($this, 'sendy_custom_box_html'), 
+				array($this, 'sendy_custom_box_html'),
 				$screen,
 				'side',
-				'high' 
+				'high'
 			);
 		}
 	}
-	
-	public function sendy_custom_box_html($post) {	
+
+	public function sendy_custom_box_html($post) {
 		$value = get_post_meta($post->ID, 'fws_sendy_hide_form', true);
 		echo '
 			<input type="checkbox" name="fws_sendy_hide_form" id="hide_sendy_form" value="'.$value.'">
 			<label for="hide_sendy_form">'.__('Hide Sendy form', 'fws_sendy_subscribe').'</label>
 		';
 	}
-	
+
 	public function save_custom_box($post_id) {
 		if (array_key_exists('fws_sendy_hide_form', $_POST)) {
             update_post_meta(
@@ -285,8 +285,8 @@ class Sendy_Subscription_Plus {
             );
         }
 	}
-	
-	
+
+
 	public function add_form_to_content($content) {
 		if (get_option('fws_sendy_add_to_content') && is_singular(array('post', 'page'))) {
 			if (method_exists($this, 'create_subform')) {
@@ -309,13 +309,13 @@ class Sendy_Subscription_Plus {
 			}
 		}
 	}
-	
+
 	public function mailmunch_secure_request() {
 		$secret = get_option('fws_sendy_mailmunch_secret');
 		$time = $_SERVER['HTTP_X_MAILMUNCH_TIME'];
 		$authorization = isset($_SERVER['HTTP_AUTHORIZATION']) ? $_SERVER['HTTP_AUTHORIZATION'] : null;
 		if (empty($authorization)) return false;
-		list($algo, $hash) = explode(' ', $authorization); 
+		list($algo, $hash) = explode(' ', $authorization);
 		if (hash('sha256', $secret . $time, true) == base64_decode($hash)) {
 			return true;
 		} else {
