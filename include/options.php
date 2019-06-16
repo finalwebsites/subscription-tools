@@ -9,11 +9,11 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 class Sendy_Plugin_Settings {
-	
+
 	private $file;
 	private $settings_base;
 	private $settings;
-	
+
 	public function __construct( $file ) {
 		$this->file = $file;
 		$this->settings_base = 'fws_sendy_';
@@ -22,21 +22,21 @@ class Sendy_Plugin_Settings {
 		add_action( 'admin_menu' , array( $this, 'add_menu_item' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( $this->file ) , array( $this, 'add_settings_link' ) );
 	}
-	
+
 	public function init() {
 		$this->settings = $this->settings_fields();
 	}
 	
 	public function add_menu_item() {
 		$page = add_options_page(
-			__( 'Sendy Subscription Settings', 'fws_sendy_subscribe' ),  
-			__( 'Sendy Subscription Plus', 'fws_sendy_subscribe' ), 
-			'manage_options', 
-			'fws-sendy-settings', 
+			__( 'Sendy Subscriptions Settings', 'fws_sendy_subscribe' ),
+			__( 'Sendy Subscriptions', 'fws_sendy_subscribe' ),
+			'manage_options',
+			'fws-sendy-settings',
 			array($this, 'settings_page')
 		);
 	}
-	
+
 	public function add_settings_link( $links ) {
 		$settings_link = '<a href="options-general.php?page=plugin_settings">' . __( 'Settings', 'plugin_textdomain' ) . '</a>';
   		array_push( $links, $settings_link );
@@ -145,7 +145,7 @@ class Sendy_Plugin_Settings {
 		$settings = apply_filters( 'plugin_settings_fields', $settings );
 		return $settings;
 	}
-	
+
 	public function register_settings() {
 		if( is_array( $this->settings ) ) {
 			foreach( $this->settings as $section => $data ) {
@@ -163,7 +163,7 @@ class Sendy_Plugin_Settings {
 		$html = '<p> ' . $this->settings[ $section['id'] ]['description'] . '</p>' . "\n";
 		echo $html;
 	}
-	
+
 	public function display_field( $args ) {
 		$field = $args['field'];
 		$html = '';
@@ -195,7 +195,7 @@ class Sendy_Plugin_Settings {
 		$html .= '<label for="' . esc_attr( $field['id'] ) . '"><span class="description">' . $field['description'] . '</span></label>' . "\n";
 		echo $html;
 	}
-	
+
 	public function settings_page() {
 		$html = '<div class="wrap" id="plugin_settings">' . "\n";
 			$html .= '<h2>' . __( 'Sendy Subscription Plus' , 'fws_sendy_subscribe' ) . '</h2>' . "\n";

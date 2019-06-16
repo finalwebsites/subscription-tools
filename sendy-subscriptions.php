@@ -29,14 +29,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
 
-include_once WP_PLUGIN_DIR.'/sendy-Subscriptions/include/options.php';
+include_once WP_PLUGIN_DIR.'/sendy-subscriptions/include/options.php';
 include_once WP_PLUGIN_DIR.'/sendy-subscriptions/include/form-shortcodes.php';
 include_once WP_PLUGIN_DIR.'/sendy-subscriptions/include/widget.php';
 
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class Sendy_Subscription_Plus {
+class Sendy_Subscriptions {
 
 	public function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'init' ) );
@@ -59,12 +59,12 @@ class Sendy_Subscription_Plus {
 		add_action('wp_ajax_nopriv_mailmunch_action', array($this, 'process_mailmunch_request'));
 
 		$current_screen = get_current_screen();
-		if ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor()) {
+		/*if ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor()) {
 
 		} else {
 			add_action('add_meta_boxes', array($this, 'add_custom_box'));
 			add_action('save_post', array($this, 'save_custom_box'));
-		}
+		}*/
 	}
 
 	public function add_assets() {

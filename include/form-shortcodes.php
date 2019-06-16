@@ -1,14 +1,14 @@
 <?php
 
-class Create_Sendy_Forms extends Sendy_Subscription_Plus {
-	
+class Create_Sendy_Forms extends Sendy_Subscriptions {
+
 	public function __construct() {
 		parent::__construct();
 		add_shortcode('FWSSendySubForm', array($this, 'create_sendy_subform'));
 		add_shortcode('FWSSendyUnsubscribe', array($this, 'unsubscribe_form'));
 		add_shortcode('getsendycount', array($this, 'get_sendy_list_count'));
 	}
-	
+
 	public function get_sendy_list_count() {
 		$sendy_count = get_transient( 'fws_sendy_list_count' );
 		if ( false === $sendy_count  ) {
@@ -48,12 +48,12 @@ class Create_Sendy_Forms extends Sendy_Subscription_Plus {
 		} else {
 			$btn_lbl = $atts['btnlabel'];
 		}
-		
+
 		if ($atts['gdpr_text'] != '') {
 			$gdpr_info = sprintf($atts['gdpr_text'], get_privacy_policy_url());
 			if ($gdpr_info == false) $gdpr_info = $atts['gdpr_text'];
 		}
-		
+
 		return '
 		<div class="'.$atts['cotainer_class'].'">
 			<h3>'.$atts['title'].'</h3>
@@ -76,7 +76,7 @@ class Create_Sendy_Forms extends Sendy_Subscription_Plus {
 		</div>
 		';
 	}
-	
+
 	public function unsubscribe_form() {
 		$atts = shortcode_atts(
 			array(
