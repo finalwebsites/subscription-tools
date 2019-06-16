@@ -1,0 +1,205 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: MailChimp Subscriptions Plus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-27 12:36+0100\n"
+"PO-Revision-Date: 2015-04-27 12:36+0100\n"
+"Last-Translator: Olaf Lederer <olaf@finalwebsites.com>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ../../trunk\n"
+
+#: ../../trunk/mailchimp-subscription-plus.php:56
+msgid "Loading..."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:57
+msgid "Please enter your name and email address."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:58
+msgid "The entered mail address is invalid."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:59
+#: ../../trunk/mailchimp-subscription-plus.php:281
+#: ../../trunk/mailchimp-subscription-plus.php:282
+#: ../../trunk/include/widget.php:43
+#: ../../trunk/include/widget.php:44
+msgid "Your first name"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:88
+#, php-format
+msgid "You need a working MailChimp account, a valid API key and mailing list ID to use this plugin. Register a free <a href=\"%s\">Mailchimp account</a>, setup a mailing list and get an API key."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:89
+msgid "Enter below the required settings and click the button below to safe them."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:95
+msgid "Configuration"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:99
+msgid " MailChimp API Key "
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:102
+msgid "Get one from your MailChimp account: Your Account &raquo; Extra's &raquo; API Keys"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:106
+msgid " MailChimp List ID "
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:109
+msgid "Create a mailing list and enter the ID here: Lists  &raquo; Settings (at the bottom)"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:113
+msgid " Merge field \"First name\" "
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:116
+msgid "Enter here the merge field for the first name: Lists  &raquo; Settings &raquo; List fields and *|MERGE|* tags"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:120
+msgid " Optional merge field (name)"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:123
+msgid "Use this optional merge field for a unique ID if you use the same list ID on different places."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:127
+msgid " Optional merge field (value)"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:130
+msgid "Add here the value for your additional merge field. You can overule this value if you use the form shortcode!"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:138
+msgid " Include CSS "
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:142
+msgid "Include our stylesheet for your web form"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:147
+msgid " Include the form for all blog posts "
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:151
+msgid "Use this checkbox to add the subscription form at the end of each blog post."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:156
+msgid " Advanced: Include site wide! "
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:160
+msgid "Use this option if you like to use the form on all pages by using the shortcode in a theme file or with a 3rd party popup."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:165
+msgid "Don't use the fields below if your Google Analytics or Clicky JavaScript snippet isn't installed!"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:168
+msgid " Track page views in Google Analytics "
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:171
+msgid "Track a page view in Google analytics after the subscription form is submitted (f.e. /subscription/submitted.html)."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:175
+msgid " Track goals in Clicky "
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:178
+msgid "Add here the goal ID for a manual goal you've already defined in Clicky (check the FAQ for information)."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:184
+msgid "Save Changes"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:188
+msgid "How to use?"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:189
+msgid "You can use the subscription form in every post (see setting above) or you can use the widget into your sidebar. It's also possible to add a shortcode to your pages and posts."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:204
+msgid "Both fields are required to enter."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:207
+msgid "Verification error, try again."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:232
+msgid "Thanks, please check your emailbox and confirm your subscription."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:238
+msgid "You're already subscribed to this list."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:242
+msgid "An unknown error occurred."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:271
+msgid "Subscribe now!"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:272
+msgid "Subscribe today and get future blog posts your email."
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:285
+#: ../../trunk/mailchimp-subscription-plus.php:286
+#: ../../trunk/include/widget.php:47
+#: ../../trunk/include/widget.php:48
+msgid "Your email address"
+msgstr ""
+
+#: ../../trunk/mailchimp-subscription-plus.php:291
+#: ../../trunk/include/widget.php:53
+msgid "Subscribe"
+msgstr ""
+
+#: ../../trunk/include/widget.php:19
+msgid "MailChimp Subscription Plus"
+msgstr ""
+
+#: ../../trunk/include/widget.php:21
+msgid "Use this widget to add a simple MailChimp subscription form to the different widget areas."
+msgstr ""
+
+#: ../../trunk/include/widget.php:84
+msgid "Title:"
+msgstr ""
+
+#: ../../trunk/include/widget.php:87
+msgid "Optional: Add some promotional text (HTML allowed)."
+msgstr ""
+
+#: ../../trunk/include/widget.php:91
+msgid "Automatically add paragraphs"
+msgstr ""
+
