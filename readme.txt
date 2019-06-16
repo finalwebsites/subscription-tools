@@ -12,7 +12,7 @@ Increase the count of new subscribers for your blog or website by using Sendy an
 
 == Description ==
 
-Email marketing is still one of the best ways to drive traffic to your website. You can use this WordPress plugin to add a newsletter subscription form below your blog, right in your articles or on other places using the widget. The Ajax technology takes care about that visitor doesn't have to leave your website while the form data gets submitted. The idea for this plugin came up because I created a new mailing list for my website. 
+Email marketing is still one of the best ways to drive traffic to your website. You can use this WordPress plugin to add a newsletter subscription form below your blog, right in your articles or on other places using the widget. The Ajax technology takes care about that visitor doesn't have to leave your website while the form data gets submitted. The idea for this plugin came up because I created a new mailing list for my website.
 
 = Check the features: =
 
@@ -67,62 +67,5 @@ The Mailchimp wrapper class is written for PHP5 and doesn't work for old and uns
 
 == Changelog ==
 
-= 1.0.2.2 =
-
-* Enhancement
-	* Updated the Mailchimp API wrapper for the current version (v3)
-
-* Other
-	* The plugin is tested for WordPress 4.8.1
-
-= 1.0.2.2 =
-
-* Enhancement
-	* You can choose now to use the double-optin feature or not
-
-* Other
-	* Enabled the namespace declaration for the Mailchimp wrapper class because it's needed! There are other plugins using the same MC wrapper and without the namespace declaration you will end up in a fatal error (check the FAQ if you have you're using an old PHP version).
-	* Moved the titel (H3) and description text into the form tags
-	* The plugin is tested for WordPress 4.4.2
-	* Updated the Mailchimp Wrapper class to support the Mailchimp APIv3
-
-= 1.0.2.1 =
-
-* Bugfixes
-	* jQuery shows a warning (in the console only) because of the form field "email" type and the "invalid" title atttribute used as default or info. This is fixed by using the "text" type instead.
-	* Fixed also the (Dutch) language files...
-
-= 1.0.2 =
-
-* Enhancement
-	* The form short code has two new attributes: title and description
-	* There is a new option to include the JS/CSS files on all pages.
-
-* Other
-	* I changed the HTML for the shorcode for fws-subscribeform-msg (div to p)
-	* Removed the namespace declaration inside the Mailchimp wrapper class (for backward compatibility with PHP 5.2)
-	* The plugin is tested for WordPress 4.2
-	* To improve your site's speed, the JS file is loaded now in the footer section
-	* Added a working .pot file for translations
-
-
-= 1.0.1.1 =
-
-* Bugfixes
-	* Changed the way how the JavaScript code works. In the old version it wasn't possible to have more than one subscription form on the same page (f.e. below the content and using the widget).
-	* The object name used for wp_localize_script is changed because of possible conflicts with other plugins or themes.
-
-= 1.0.1 =
-
-* Other
-	* Fixed some typo's and changed some information
-	* Moved some PHP files into the new "includes" directory
-	* Added a new screenshot for the widget
-
-* Enhancement
-	* Added the subscription form widget
-	* It's possible now to translate the complete plugin
-
 = 1.0 =
 * Initial release
-
