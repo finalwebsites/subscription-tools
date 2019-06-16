@@ -16,16 +16,16 @@ Email marketing is still one of the best ways to drive traffic to your website. 
 
 = Check the features: =
 
-* Add the subscription form to any page or post by using a shortcode or just include for all blog posts
+* Add the subscription form to any page or post by using a shortcode or just include your form for all blog posts
 * Add the form into your blog's sidebar using the widget
-* Double opt-in is supported
+* Use the MailMunch connector for a better integration between MailMunch and Sendy
 * Using nonces for simple form value validation
 * The visitor stays on your website while submitting the form data
-* You can change/translate all plugin text by using a localization tool
+* You can change/translate all plugin text by using a localization tool (Loco Translate is a nice one)
 * The form HTML is compatible with the Bootstrap CSS framework (v3)
 * Optional: use the CSS style-sheet included with the plugin
 * Track succesfully submitted forms in Google Analytics and Clicky
-* The plugin includes JS and CSS files only if the form is present (there is also an option to include these files sitewide)
+* The plugin includes JS and CSS files only if the form is present (there are different options to include them on those page where the code is necessary)
 
 
 
@@ -33,17 +33,17 @@ Email marketing is still one of the best ways to drive traffic to your website. 
 
 == Installation ==
 
-The quickest method for installing the Sendy subscription form is:
+The quickest method for installing the Sendy subscriptions plugin is:
 
 1. Automatically install using the built-in WordPress Plugin installer or...
-1. Upload the entire `mailchimp-subscription-plus` folder to the `/wp-content/plugins/` directory.
+1. Upload the entire `sendy-subscriptions` folder to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. Enter your Sendy API key, the mailing list ID and the other options on the plugin settings page.
 1. Add the shortcode [FWSSendySubForm] into the page of your choice or enable the form for all blog posts.
 
 == Frequently Asked Questions ==
 
-= The subscription form doesn't work, the secondary name isn't passed to the mailinng list =
+= The subscription form doesn't work, the secondary name isn't passed to the mailing list =
 
 Compare the merge fields you're using for the plugin settings and for your Sendy mailing list. They need to be identical, use only the characters from the  "Personalization tag"
 
