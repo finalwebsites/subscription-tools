@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Sendy Subscriptions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-19 11:19+0000\n"
-"PO-Revision-Date: 2019-07-19 11:22+0000\n"
+"PO-Revision-Date: 2019-07-19 14:17+0000\n"
 "Last-Translator: admin <admin@local.test>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -31,7 +31,7 @@ msgstr "Alle"
 
 #: sendy-subscriptions.php:197 sendy-subscriptions.php:227
 msgid "An unknown error occurred."
-msgstr ""
+msgstr "Er is een onbekende fout ontstaan."
 
 #: include/widget.php:90
 msgid "Automatically add paragraphs"
@@ -39,7 +39,7 @@ msgstr ""
 
 #: sendy-subscriptions.php:175
 msgid "Both fields are required to enter."
-msgstr ""
+msgstr "Beide velden zijn verplicht om in te vullen."
 
 #: include/options.php:78
 msgid ""
