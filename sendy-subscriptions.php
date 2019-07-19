@@ -58,13 +58,9 @@ class Sendy_Subscriptions {
 		add_action('wp_ajax_mailmunch_action', array($this, 'process_mailmunch_request'));
 		add_action('wp_ajax_nopriv_mailmunch_action', array($this, 'process_mailmunch_request'));
 
-		$current_screen = get_current_screen();
-		/*if ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor()) {
+		add_action('add_meta_boxes', array($this, 'add_custom_box'));
+		add_action('save_post', array($this, 'save_custom_box'));
 
-		} else {
-			add_action('add_meta_boxes', array($this, 'add_custom_box'));
-			add_action('save_post', array($this, 'save_custom_box'));
-		}*/
 	}
 
 	public function add_assets() {
@@ -255,6 +251,8 @@ class Sendy_Subscriptions {
 	}
 
 	public function add_custom_box() {
+		$curr_screen = get_current_screen();
+		print_r($curr_screen);
 		$screens = array('post', 'page');
 		foreach ($screens as $screen) {
 			add_meta_box(
