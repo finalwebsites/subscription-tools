@@ -251,8 +251,8 @@ class Sendy_Subscriptions {
 	}
 
 	public function add_custom_box() {
-		$curr_screen = get_current_screen();
-		print_r($curr_screen);
+		//$curr_screen = get_current_screen();
+		//print_r($curr_screen);
 		$screens = array('post', 'page');
 		foreach ($screens as $screen) {
 			add_meta_box(
@@ -268,20 +268,26 @@ class Sendy_Subscriptions {
 
 	public function sendy_custom_box_html($post) {
 		$value = get_post_meta($post->ID, 'fws_sendy_hide_form', true);
+		wp_nonce_field( 'fws_action_save_sendy_hide', 'fws_sendy_hide_nonce_field' );
 		echo '
-			<input type="checkbox" name="fws_sendy_hide_form" id="hide_sendy_form" value="'.$value.'">
+			<input type="checkbox" name="fws_sendy_hide_form" id="hide_sendy_form" value="1"'.checked( $value, 1, false ).'>
 			<label for="hide_sendy_form">'.__('Hide Sendy form', 'fws_sendy_subscribe').'</label>
 		';
 	}
 
 	public function save_custom_box($post_id) {
-		if (array_key_exists('fws_sendy_hide_form', $_POST)) {
-            update_post_meta(
-                $post_id,
-                'fws_sendy_hide_form',
-                $_POST['fws_sendy_hide_form']
-            );
-        }
+		if ( isset( $_POST['fws_sendy_hide_nonce_field'] ) && wp_verify_nonce( $_POST['fws_sendy_hide_nonce_field'], 'fws_action_save_sendy_hide' ) ) {
+			if (array_key_exists('fws_sendy_hide_form', $_POST)) {
+				$value = (int)$_POST['fws_sendy_hide_form'];
+			} else {
+				$value = 0;
+			}
+    		update_post_meta(
+	            $post_id,
+	            'fws_sendy_hide_form',
+	            $value
+        	);
+		}
 	}
 
 
