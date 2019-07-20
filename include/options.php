@@ -89,7 +89,7 @@ class Sendy_Plugin_Settings {
 				),
 				array(
 					'id' 			=> 'add_to_content',
-					'label'			=> __( 'Show for for all posts', 'fws_sendy_subscribe' ),
+					'label'			=> __( 'Show for all posts', 'fws_sendy_subscribe' ),
 					'description'	=> __( 'Use this checkbox to add the subscription form at the end of each blog post', 'fws_sendy_subscribe' ),
 					'type'			=> 'checkbox',
 					'default'		=> ''
@@ -198,7 +198,7 @@ class Sendy_Plugin_Settings {
 
 	public function settings_page() {
 		$html = '<div class="wrap" id="plugin_settings">' . "\n";
-			$html .= '<h2>' . __( 'Sendy Subscription Plus' , 'fws_sendy_subscribe' ) . '</h2>' . "\n";
+			$html .= '<h2>' . __( 'Sendy Subscriptions' , 'fws_sendy_subscribe' ) . '</h2>' . "\n";
 			$html .= '<p>'.sprintf ( __( 'To use this plugin you need a working Sendy application. Buy your own copy here: <a href="%s" target="_blank">Sendy, self hosted email newsletter application</a>.', 'fws_sendy_subscribe' ), esc_url( 'https://sendy.co/?ref=44zxc' ) ).'</p>' . "\n";
 			$html .= '<form method="post" action="options.php">' . "\n";
 				$html .= '<ul id="settings-sections" class="subsubsub hide-if-no-js">' . "\n";

@@ -1,11 +1,10 @@
 === Sendy Subscriptions ===
 Contributors: finalwebsites
-Donate link: https://www.finalwebsites.com/
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: sendy, subscription, subscribe form, ajax forms, email marketing, mailing list, forms, api, ajax, email form, shortcode, clicky, Google Analytics, tracking
 Requires at least: 4.0
-Tested up to: 5.2.1
+Tested up to: 5.2.2
 Stable tag: 1.0.0
 
 Increase the count of new subscribers for your blog or website by using Sendy and a professional subscription form.

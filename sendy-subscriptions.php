@@ -2,7 +2,7 @@
 /*
 Plugin Name: Sendy Subscriptions
 Version: 1.0.0
-Plugin URI: http://www.finalwebsites.com/
+Plugin URI: https://www.web-development-blog.com/sendy-subscriptions-plugin/
 Description: Increase the count of new subscribers for your blog or website by using Sendy and a professional subscription form.
 Author: Olaf Lederer
 Author URI: https://www.olaflederer.com/
@@ -10,7 +10,7 @@ Text Domain: fws_sendy_subscribe
 Domain Path: /languages/
 License: GPL v3
 
-Sendy Subscription Plus
+Sendy Subscriptions
 Copyright (C) 2019, Olaf Lederer - https://www.olaflederer.com/
 
 This program is free software: you can redistribute it and/or modify
@@ -246,7 +246,7 @@ class Sendy_Subscriptions {
 
 			$text .= PHP_EOL.'Sendy: '.$resp;
 		}
-		if (WP_DEBUG) file_put_contents(WP_PLUGIN_DIR.'/sendy-subscription-plus/test.log', PHP_EOL.$text, FILE_APPEND);
+		if (WP_DEBUG) file_put_contents(WP_PLUGIN_DIR.'/sendy-subscriptions/test.log', PHP_EOL.$text, FILE_APPEND);
 		die();
 	}
 

@@ -16,9 +16,9 @@ class SENDY_subscription_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'sendy-subscription-widget', // Base ID
-			__('Sendy Subscription Plus', 'fws_sendy_subscribe'), // Name
+			__('Sendy Subscriptions', 'fws_sendy_subscribe'), // Name
 			array(
-				'description' => __( 'Use this widget to add a simple Sendy subscription form to the different widget areas.', 'fws_sendy_subscribe' )
+				'description' => __( 'Use this widget to add a simple Sendy subscription form to the different sidebars.', 'fws_sendy_subscribe' )
 			)
 		);
 	}
