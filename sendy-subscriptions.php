@@ -246,7 +246,7 @@ class Sendy_Subscriptions {
 
 			$text .= PHP_EOL.'Sendy: '.$resp;
 		}
-		file_put_contents(WP_PLUGIN_DIR.'/sendy-subscription-plus/test.log', PHP_EOL.$text, FILE_APPEND);
+		if (WP_DEBUG) file_put_contents(WP_PLUGIN_DIR.'/sendy-subscription-plus/test.log', PHP_EOL.$text, FILE_APPEND);
 		die();
 	}
 

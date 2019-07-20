@@ -26,7 +26,7 @@ class Sendy_Plugin_Settings {
 	public function init() {
 		$this->settings = $this->settings_fields();
 	}
-	
+
 	public function add_menu_item() {
 		$page = add_options_page(
 			__( 'Sendy Subscriptions Settings', 'fws_sendy_subscribe' ),
@@ -51,7 +51,7 @@ class Sendy_Plugin_Settings {
 				array(
 					'id' 			=> 'api_key',
 					'label'			=> __( 'Sendy API Key' , 'fws_sendy_subscribe' ),
-					'description'	=> __( 'You can find this key in your on the main settings page (/settings)', 'plugin_textdomain' ),
+					'description'	=> __( 'You can find this key in your Sendy application on the main settings page (/settings)', 'plugin_textdomain' ),
 					'type'			=> 'text',
 					'default'		=> '',
 					'placeholder'	=> ''
@@ -62,7 +62,7 @@ class Sendy_Plugin_Settings {
 					'description'	=> __( 'The URL from your Sendy application.', 'fws_sendy_subscribe' ),
 					'type'			=> 'text',
 					'default'		=> '',
-					'placeholder'	=> 'https://yoursendapp.com'
+					'placeholder'	=> 'For example: https://yoursendapp.com'
 				),
 				array(
 					'id' 			=> 'list_id',
@@ -83,7 +83,7 @@ class Sendy_Plugin_Settings {
 				array(
 					'id' 			=> 'include_css',
 					'label'			=> __( 'Include CSS', 'fws_sendy_subscribe' ),
-					'description'	=> __( 'Include the plugin\'s stylesheet for your web forms.', 'fws_sendy_subscribe' ),
+					'description'	=> __( 'Include the plugin\'s stylesheet for your subscribtion forms.', 'fws_sendy_subscribe' ),
 					'type'			=> 'checkbox',
 					'default'		=> ''
 				),
@@ -111,7 +111,7 @@ class Sendy_Plugin_Settings {
 				array(
 					'id' 			=> 'gdpr_text',
 					'label'			=> __( 'GDPR text' , 'fws_sendy_subscribe' ),
-					'description'	=> __( 'Place here your GDPR info and/or link to your privacy statement. Don\'t for get to set the privacy settings first.', 'fws_sendy_subscribe' ),
+					'description'	=> __( 'Place here your GDPR info text. Don\'t change the link HTML code, we use the privacy URL which is set via "Settings > Privacy".', 'fws_sendy_subscribe' ),
 					'type'			=> 'textarea',
 					'default'		=> __('We use your personal data according our <a href="%s">privacy statement</a>.'),
 					'placeholder'	=> ''
@@ -119,7 +119,7 @@ class Sendy_Plugin_Settings {
 				array(
 					'id' 			=> 'google_analytics',
 					'label'			=> __( 'Track in Google Analytics' , 'fws_sendy_subscribe' ),
-					'description'	=> __( 'Track a page view in Google analytics after the subscription form is submitted.', 'fws_sendy_subscribe' ),
+					'description'	=> __( 'Track a page view in Google Analytics after the subscription form is submitted.', 'fws_sendy_subscribe' ),
 					'type'			=> 'text',
 					'default'		=> '',
 					'placeholder'	=> '/subscription/submitted.html'
@@ -135,7 +135,7 @@ class Sendy_Plugin_Settings {
 				array(
 					'id' 			=> 'mailmunch_secret',
 					'label'			=> __( 'Mailmunch secret' , 'fws_sendy_subscribe' ),
-					'description'	=> __( 'Add here a secret string which you can use to protect your Sendy app against spam submissions.', 'fws_sendy_subscribe' ),
+					'description'	=> __( 'Add here the secret string which you can use to protect your Sendy app against SPAM submissions.', 'fws_sendy_subscribe' ),
 					'type'			=> 'text',
 					'default'		=> '',
 					'placeholder'	=> ''
@@ -199,7 +199,7 @@ class Sendy_Plugin_Settings {
 	public function settings_page() {
 		$html = '<div class="wrap" id="plugin_settings">' . "\n";
 			$html .= '<h2>' . __( 'Sendy Subscription Plus' , 'fws_sendy_subscribe' ) . '</h2>' . "\n";
-			$html .= '<p>'.sprintf ( __( 'To use this plugin you need a working Sendy application. Buy a copy right here: <a href="%s" target="_blank">Sendy, self hosted email newsletter application  </a>.', 'fws_sendy_subscribe' ), esc_url( 'https://sendy.co/?ref=44zxc' ) ).'</p>' . "\n";
+			$html .= '<p>'.sprintf ( __( 'To use this plugin you need a working Sendy application. Buy your own copy here: <a href="%s" target="_blank">Sendy, self hosted email newsletter application</a>.', 'fws_sendy_subscribe' ), esc_url( 'https://sendy.co/?ref=44zxc' ) ).'</p>' . "\n";
 			$html .= '<form method="post" action="options.php">' . "\n";
 				$html .= '<ul id="settings-sections" class="subsubsub hide-if-no-js">' . "\n";
 					$html .= '<li><a class="tab all current" href="#all">' . __( 'All' , 'fws_sendy_subscribe' ) . '</a></li>' . "\n";
@@ -219,7 +219,7 @@ class Sendy_Plugin_Settings {
 			$option_name = $this->settings_base . 'api_key';
 			if (get_option($option_name)) $html .= '
 			<h3>'.__( 'How to use?', 'fws_sendy_subscribe' ).'</h3>
-			<p>'.__( 'You can use a subscription form in every post (see setting above) or you can use the widget into your sidebar. It\'s also possible to add a shortcode to your pages and posts.', 'fws_sendy_subscribe' ).'</p>
+			<p>'.__( 'You can use a subscription form in every post (see setting above) or you can use the widget for  your theme\'s sidebar. It\'s also possible to add a shortcode to your pages and posts.', 'fws_sendy_subscribe' ).'</p>
 			<p><code>[FWSSendySubForm]</code></p>
 			<p><code>[FWSSendySubForm secname="FirstName" title="Subscribe today" description="Subscribe now and get future updates in your mailbox."]</code></p>';
 		$html .= '</div>' . "\n";

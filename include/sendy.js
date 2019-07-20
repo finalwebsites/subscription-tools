@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
 				if (response.status == 'success') {
 					subform[0].reset();
 					if (msp_ajax_object.googleanalytics) {
-						_gaq.push(['_trackPageview', msp_ajax_object.googleanalytics]);
+						ga('send', 'pageview', msp_ajax_object.googleanalytics]);
 					}
 					if (msp_ajax_object.clickyanalytics) {
 						clicky.goal( msp_ajax_object.clickyanalytics );
@@ -45,12 +45,12 @@ jQuery(document).ready(function($) {
 			}
 		});
 	});
-	
+
 	$('.sendy-unsub-fws').click(function() {
 		var subform = $(this).closest('form');
 		var formID = subform.attr('id');
 		var msgID = $('#' + formID + ' + .error-message').attr('id');
-        
+
 		$('#' + msgID).html('<img src="' + msp_ajax_object.plugin_base_path + 'include/loading.gif" alt="' + msp_ajax_object.js_alt_loading + '">');
 		$.ajax({
 			type: 'POST',
