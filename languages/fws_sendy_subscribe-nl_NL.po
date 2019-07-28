@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Sendy Subscriptions\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-07-20 13:40+0000\n"
-"PO-Revision-Date: 2019-07-20 13:42+0000\n"
+"PO-Revision-Date: 2019-07-28 07:16+0000\n"
 "Last-Translator: admin <admin@local.test>\n"
 "Language-Team: Dutch\n"
 "Language: nl_NL\n"
@@ -114,11 +114,11 @@ msgstr "Titel:"
 
 #: include/widget.php:86
 msgid "Optional: Add some promotional text (HTML allowed)."
-msgstr ""
+msgstr "Optioneel: Plaats een promotionele tekst (HTML is mogelijk)"
 
 #: include/widget.php:90
 msgid "Automatically add paragraphs"
-msgstr ""
+msgstr "Automatisch paragraaf regels toevoegen"
 
 #: include/options.php:32
 msgid "Sendy Subscriptions Settings"
@@ -130,7 +130,7 @@ msgstr "Algemeen"
 
 #: include/options.php:49
 msgid "General settings and options for the Sendy plugin."
-msgstr ""
+msgstr "Algemene instellingen en opties voor de Sendy plugin."
 
 #: include/options.php:53
 msgid "Sendy API Key"
@@ -160,7 +160,7 @@ msgstr "Extra naam veld"
 #: include/options.php:78
 msgid ""
 "Create a custom field like \"First name\" and enter the field name here."
-msgstr ""
+msgstr "Maak een extra veld aan zoals \"Voornaam\" en plaats de veldnaam hier."
 
 #: include/options.php:85
 msgid "Include CSS"
@@ -169,6 +169,7 @@ msgstr "CSS insluiten"
 #: include/options.php:86
 msgid "Include the plugin's stylesheet for your subscribtion forms."
 msgstr ""
+"Het stijlbestand voor de inschrijvingsformulieren van de plugin gebruiken."
 
 #: include/options.php:92
 msgid "Show for all posts"
@@ -178,6 +179,8 @@ msgstr "Toon voor alle berichten"
 msgid ""
 "Use this checkbox to add the subscription form at the end of each blog post"
 msgstr ""
+"Activeer deze checkbox om het inschrijfformulier aan het einde van elke "
+"blogpost te plaatsen"
 
 #: include/options.php:99
 msgid "Incl. JS/CSS for categories"
@@ -187,6 +190,8 @@ msgstr "JS/CSS voor categorieën bijvoegen"
 msgid ""
 "Use this option if you like to use the form on your blog categorie pages."
 msgstr ""
+"Gebruik deze optie wanneer je het formulier ook op de blogcategorie pagina's "
+"wil kunnen gebruiken."
 
 #: include/options.php:106
 msgid "Incl. JS/CSS sitewide"
@@ -196,6 +201,8 @@ msgstr "JS/CSS overal bijvoegen"
 msgid ""
 "Use this option if you like to use the form on all your posts and pages."
 msgstr ""
+"Gebruik deze optie wanneer je het formulier op elke pagina en post wil "
+"kunnen gebruiken."
 
 #: include/options.php:113
 msgid "GDPR text"
@@ -206,6 +213,9 @@ msgid ""
 "Place here your GDPR info text. Don't change the link HTML code, we use the "
 "privacy URL which is set via \"Settings > Privacy\"."
 msgstr ""
+"Plaats hier je AVG informatie. Wijzig niet de link HTML, wij gebruiken de "
+"URL van de privacyverklaring welke je kan instellen via \"Instellingen > "
+"Privacy\""
 
 #: include/options.php:121
 msgid "Track in Google Analytics"
@@ -216,6 +226,8 @@ msgid ""
 "Track a page view in Google Analytics after the subscription form is "
 "submitted."
 msgstr ""
+"Volg een paginaweergave in Google Analytics wanneer het inschrijfformulier "
+"wordt verzonden."
 
 #: include/options.php:129
 msgid "Track in Clicky"
@@ -225,6 +237,8 @@ msgstr "In Clicky tracken"
 msgid ""
 "Add here the goal ID for a manual goal you've already defined in Clicky."
 msgstr ""
+"Plaats hier de ID van het manuele doel dat je eerder hebt gedefinieerd in "
+"Clicky."
 
 #: include/options.php:137
 msgid "Mailmunch secret"
@@ -235,6 +249,8 @@ msgid ""
 "Add here the secret string which you can use to protect your Sendy app "
 "against SPAM submissions."
 msgstr ""
+"Plaats hier de geheime tekst die wordt gebruikt in Sendy om je tegen SPAM te "
+"beschermen."
 
 #: include/options.php:202
 #, php-format
@@ -243,6 +259,9 @@ msgid ""
 "here: <a href=\"%s\" target=\"_blank\">Sendy, self hosted email newsletter "
 "application</a>."
 msgstr ""
+"Om deze plugin te gebruiken, is een werkende Sendy applicatie vereist. Koop "
+"je eigen kopie hier:  <a href=\"%s\" target=\"_blank\">Sendy, self hosted e-"
+"mail nieuwsbrief applicatie</a>."
 
 #: include/options.php:205
 msgid "All"
@@ -262,12 +281,17 @@ msgid ""
 "use the widget for  your theme's sidebar. It's also possible to add a "
 "shortcode to your pages and posts."
 msgstr ""
+"Je kan het inschrijfformulier voor elke blogpost gebruiken (zie de "
+"instelling boven) of je gebruikt het widget in de zijbalk van he thema. Het "
+"is ook mogelijk om een shortcode in je pagina's en posts te plaatsen."
 
 #. Description of the plugin
 msgid ""
 "Increase the count of new subscribers for your blog or website by using "
 "Sendy and a professional subscription form."
 msgstr ""
+"Verhoog het aantal inschrijvingen voor je blog of website door het gebruik "
+"van Sendy en een professioneel inschrijfformulier."
 
 #. URI of the plugin
 msgid "https://www.web-development-blog.com/sendy-subscriptions-plugin/"
