@@ -27,11 +27,11 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
+define (STFS_DIR, plugin_dir_path( __FILE__ ));
 
-
-include_once WP_PLUGIN_DIR.'/subscription-tools/include/options.php';
-include_once WP_PLUGIN_DIR.'/subscription-tools/include/form-shortcodes.php';
-include_once WP_PLUGIN_DIR.'/subscription-tools/include/widget.php';
+include_once STFS_DIR.'include/options.php';
+include_once STFS_DIR.'include/form-shortcodes.php';
+include_once STFS_DIR.'include/widget.php';
 
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -43,7 +43,7 @@ class Subscription_tools {
 	}
 
 	public function init() {
-		load_plugin_textdomain( 'fws_sendy_subscribe', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'fws_sendy_subscribe', false, STFS_DIR . 'languages/' );
 
 		add_filter( 'the_content', array($this, 'add_form_to_content'), 20 );
 
@@ -246,7 +246,7 @@ class Subscription_tools {
 
 			$text .= PHP_EOL.'Sendy: '.$resp;
 		}
-		if (WP_DEBUG) file_put_contents(WP_PLUGIN_DIR.'/subscription-tools/test.log', PHP_EOL.$text, FILE_APPEND);
+		if (WP_DEBUG) file_put_contents(STFS_DIR.'test.log', PHP_EOL.$text, FILE_APPEND);
 		die();
 	}
 
