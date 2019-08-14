@@ -2,7 +2,7 @@
 /*
 Plugin Name: Subscription tools for Sendy
 Version: 1.0.0
-Plugin URI: https://www.web-development-blog.com/sendy-subscriptions-plugin/
+Plugin URI: https://www.web-development-blog.com/
 Description: Increase the count of new subscribers for your blog or website by using Sendy and a professional subscription form.
 Author: Olaf Lederer
 Author URI: https://www.olaflederer.com/
@@ -27,7 +27,7 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
 
-define (STFS_DIR, plugin_dir_path( __FILE__ ));
+define('STFS_DIR', plugin_dir_path( __FILE__ ));
 
 include_once STFS_DIR.'include/options.php';
 include_once STFS_DIR.'include/form-shortcodes.php';
@@ -60,6 +60,7 @@ class Subscription_tools {
 
 		add_action('add_meta_boxes', array($this, 'add_custom_box'));
 		add_action('save_post', array($this, 'save_custom_box'));
+
 
 	}
 
@@ -107,6 +108,8 @@ class Subscription_tools {
 			}
 		}
 	}
+
+
 
 	public function make_api_call($data, $action = 'subscribe') {
 		$url = get_option('fws_sendy_url');

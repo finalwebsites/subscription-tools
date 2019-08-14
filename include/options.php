@@ -21,10 +21,12 @@ class Sendy_Plugin_Settings {
 		add_action( 'admin_init' , array( $this, 'register_settings' ) );
 		add_action( 'admin_menu' , array( $this, 'add_menu_item' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( $this->file ) , array( $this, 'add_settings_link' ) );
+
 	}
 
 	public function init() {
 		$this->settings = $this->settings_fields();
+
 	}
 
 	public function add_menu_item() {
@@ -38,7 +40,7 @@ class Sendy_Plugin_Settings {
 	}
 
 	public function add_settings_link( $links ) {
-		$settings_link = '<a href="options-general.php?page=plugin_settings">' . __( 'Settings', 'plugin_textdomain' ) . '</a>';
+		$settings_link = '<a href="options-general.php?page=fws-sendy-settings">' . __( 'Settings', 'plugin_textdomain' ) . '</a>';
   		array_push( $links, $settings_link );
   		return $links;
 	}
@@ -198,7 +200,7 @@ class Sendy_Plugin_Settings {
 
 	public function settings_page() {
 		$html = '<div class="wrap" id="plugin_settings">' . "\n";
-			$html .= '<h2>' . __( 'Sendy Subscriptions' , 'fws_sendy_subscribe' ) . '</h2>' . "\n";
+			$html .= '<h2>' . __( 'Subscriptions tools' , 'fws_sendy_subscribe' ) . '</h2>' . "\n";
 			$html .= '<p>'.sprintf ( __( 'To use this plugin you need a working Sendy application. Buy your own copy here: <a href="%s" target="_blank">Sendy, self hosted email newsletter application</a>.', 'fws_sendy_subscribe' ), esc_url( 'https://sendy.co/?ref=44zxc' ) ).'</p>' . "\n";
 			$html .= '<form method="post" action="options.php">' . "\n";
 				$html .= '<ul id="settings-sections" class="subsubsub hide-if-no-js">' . "\n";
