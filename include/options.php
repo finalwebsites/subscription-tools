@@ -29,8 +29,8 @@ class Sendy_Plugin_Settings {
 
 	public function add_menu_item() {
 		$page = add_options_page(
-			__( 'Sendy Subscriptions Settings', 'fws_sendy_subscribe' ),
-			__( 'Sendy Subscriptions', 'fws_sendy_subscribe' ),
+			__( 'Subscription tools Settings', 'fws_sendy_subscribe' ),
+			__( 'Subscription tools', 'fws_sendy_subscribe' ),
 			'manage_options',
 			'fws-sendy-settings',
 			array($this, 'settings_page')

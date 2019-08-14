@@ -1,4 +1,4 @@
-# Sendy Subscriptions
+# Subscription tools for Sendy
 
 Increase the count of new subscribers for your blog or website by using Sendy and a professional subscription form.
 
@@ -25,7 +25,7 @@ Email marketing is still one of the best ways to drive traffic to your website. 
 
 ## Installation
 
-The quickest method for installing the Sendy subscriptions plugin is:
+The quickest method for installing the plugin is:
 
 1. Automatically install using the built-in WordPress Plugin installer or...
 1. Upload the entire `sendy-subscriptions` folder to the `/wp-content/plugins/` directory.

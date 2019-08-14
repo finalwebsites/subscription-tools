@@ -1,6 +1,6 @@
 <?php
 
-class Create_Sendy_Forms extends Sendy_Subscriptions {
+class Create_Sendy_Forms extends Subscription_tools {
 
 	public function __construct() {
 		parent::__construct();

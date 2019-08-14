@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Sendy Subscriptions
+Plugin Name: Subscription tools for Sendy
 Version: 1.0.0
 Plugin URI: https://www.web-development-blog.com/sendy-subscriptions-plugin/
 Description: Increase the count of new subscribers for your blog or website by using Sendy and a professional subscription form.
@@ -10,7 +10,7 @@ Text Domain: fws_sendy_subscribe
 Domain Path: /languages/
 License: GPL v3
 
-Sendy Subscriptions
+Subscription tools for Sendy
 Copyright (C) 2019, Olaf Lederer - https://www.olaflederer.com/
 
 This program is free software: you can redistribute it and/or modify
@@ -29,14 +29,14 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
 
-include_once WP_PLUGIN_DIR.'/sendy-subscriptions/include/options.php';
-include_once WP_PLUGIN_DIR.'/sendy-subscriptions/include/form-shortcodes.php';
-include_once WP_PLUGIN_DIR.'/sendy-subscriptions/include/widget.php';
+include_once WP_PLUGIN_DIR.'/subscription-tools/include/options.php';
+include_once WP_PLUGIN_DIR.'/subscription-tools/include/form-shortcodes.php';
+include_once WP_PLUGIN_DIR.'/subscription-tools/include/widget.php';
 
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-class Sendy_Subscriptions {
+class Subscription_tools {
 
 	public function __construct() {
 		add_action( 'plugins_loaded', array( $this, 'init' ) );
@@ -246,7 +246,7 @@ class Sendy_Subscriptions {
 
 			$text .= PHP_EOL.'Sendy: '.$resp;
 		}
-		if (WP_DEBUG) file_put_contents(WP_PLUGIN_DIR.'/sendy-subscriptions/test.log', PHP_EOL.$text, FILE_APPEND);
+		if (WP_DEBUG) file_put_contents(WP_PLUGIN_DIR.'/subscription-tools/test.log', PHP_EOL.$text, FILE_APPEND);
 		die();
 	}
 

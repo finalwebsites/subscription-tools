@@ -1,4 +1,4 @@
-=== Sendy Subscriptions ===
+=== Subscription tools for Sendy ===
 Contributors: finalwebsites
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -13,7 +13,7 @@ Increase the count of new subscribers for your blog or website by using Sendy an
 
 Email marketing is still one of the best ways to drive traffic to your website. You can use this WordPress plugin to add a newsletter subscription form below your blog, right in your articles or on other places using the widget or shortcode. The Ajax technology takes care about that visitor doesn't have to leave your website while the form data gets submitted.
 
-*To use this plugin, you need access to a Sendy application. You can host the application by your self or maybe you can het an account from someone else.*
+*To use this plugin, you need access to a Sendy application. You can host the application by your self or maybe you can get an account from someone else.*
 
 = These are the features: =
 
@@ -36,10 +36,10 @@ Email marketing is still one of the best ways to drive traffic to your website. 
 
 == Installation ==
 
-The quickest method for installing the Sendy subscriptions plugin is:
+The quickest method for installing the plugin is:
 
 1. Automatically install using the built-in WordPress Plugin installer or...
-1. Upload the entire `sendy-subscriptions` folder to the `/wp-content/plugins/` directory.
+1. Upload the entire `subscription-tools` directory to the `/wp-content/plugins/` directory.
 1. Activate the plugin through the 'Plugins' menu in WordPress.
 1. Enter your Sendy API key, the mailing list ID and the other options on the plugin settings page.
 
@@ -59,7 +59,7 @@ If you use a Clicky premium plan it's possible to track Goals.
 1. Copy/paste the ID into the corresponding field on the plugin options page
 
 == Screenshots ==
-1. Settings for the *Sendy Subscriptions* plugin.
+1. Settings for the *Subscription tools for Sendy* plugin.
 2. An example how the subscription form looks like.
 3. Subscription form widget (Made together with the theme called "The Bootstrap")
 
