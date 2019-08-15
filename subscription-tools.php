@@ -139,19 +139,19 @@ class Subscription_tools {
 		} elseif ($action == 'subscriber_count') {
 			$action = '/api/subscribers/active-subscriber-count.php';
 			$post_array = array(
-				'list_id' => $list,
+				'list' => $list,
 				'api_key' => $api_key
 			);
 		} elseif ($action == 'subscriber_status') {
 			$action = '/api/subscribers/subscription-status.php';
 			$post_array = array(
-				'list_id' => $list,
+				'list' => $list,
 				'api_key' => $api_key,
 				'email' => $data['email']
 			);
 		} elseif ($action == 'unsubscribe') {
 			$post_array = array(
-				'list_id' => $list,
+				'list' => $list,
 				'email' => $data['email'],
 				'boolean' => 'true'
 			);
@@ -214,7 +214,7 @@ class Subscription_tools {
 		if (empty($_POST['email'])) {
 			$error = __( 'Please enter your email address.', 'fws_sendy_subscribe' );
 		} else {
-			if (!wp_verify_nonce($_POST['_fwssendy_unsubnonce'], 'fwssendy_subform')) {
+			if (!wp_verify_nonce($_POST['_fwssendy_unsubnonce'], 'fwssendy_unsubform')) {
 				$error = __( 'Verification error, try again.', 'fws_sendy_subscribe' );
 			} else {
 				$data = array();
@@ -222,12 +222,13 @@ class Subscription_tools {
 
 				$result = $this->make_api_call($data, 'unsubscribe');
 
-				if ($result == 'true') {
+				if ($result == '1') {
 					$status = 'success';
+					$error = __( 'Your email address is removed from our mailing list.', 'fws_sendy_subscribe' );
 				} elseif ($result == 'Email does not exist.') {
 					$error = __( 'Your email address is not on our list.', 'fws_sendy_subscribe' );
 				} else {
-					$error = __( 'An unknown error occurred.', 'fws_sendy_subscribe' );
+					$error = __( 'Error: '.$result, 'fws_sendy_subscribe' );
 				}
 			}
 		}
@@ -296,8 +297,8 @@ class Subscription_tools {
 
 	public function add_form_to_content($content) {
 		if (get_option('fws_sendy_add_to_content') && is_singular(array('post', 'page'))) {
-			if (method_exists($this, 'create_subform')) {
-				$content .= $this->create_subform();
+			if (method_exists($this, 'create_sendy_subform')) {
+				$content .= $this->create_sendy_subform();
 			}
 		}
 		return $content;

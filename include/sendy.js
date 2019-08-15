@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
 				if (response.status == 'success') {
 					subform[0].reset();
 					if (msp_ajax_object.googleanalytics) {
-						ga('send', 'pageview', msp_ajax_object.googleanalytics]);
+						ga('send', 'pageview', msp_ajax_object.googleanalytics);
 					}
 					if (msp_ajax_object.clickyanalytics) {
 						clicky.goal( msp_ajax_object.clickyanalytics );
