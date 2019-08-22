@@ -114,7 +114,7 @@ class Subscription_tools {
 	public function make_api_call($data, $action = 'subscribe') {
 		$url = get_option('fws_sendy_url');
 		$list = get_option('fws_sendy_list_id');
-		$sec_name = get_option('fws_sendy_sec_name');
+		$sec_name = get_option('fws_sendy_sec_field');
 		$api_key = get_option('fws_sendy_api_key');
 		if ($action == 'subscribe') {
 			$post_array = array(

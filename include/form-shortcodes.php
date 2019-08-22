@@ -52,10 +52,10 @@ class Create_Sendy_Forms extends Subscription_tools {
 		}
 
 		if ($atts['gdpr_text'] != '') {
-			$gdpr_info = sprintf($atts['gdpr_text'], get_privacy_policy_url());
-			if ($gdpr_info == false) $gdpr_info = $atts['gdpr_text'];
-		}
 
+			$gdpr_info = sprintf( wp_kses( $atts['gdpr_text'], array(  'a' => array( 'href' => array() ) ) ), esc_url( get_privacy_policy_url() ) );		} else {
+			$gdpr_info = '';
+		}
 		return '
 		<div class="'.$atts['container_class'].'">
 			<h3>'.$atts['title'].'</h3>
@@ -75,7 +75,7 @@ class Create_Sendy_Forms extends Subscription_tools {
 				<button class="btn btn-primary sendy-subscr-fws'.$btn_size.'" tabindex="3" type="button">'.$btn_lbl.'</button>
 			</form>
 			<p id="fws-subscribeform-msg" class="error-message">&nbsp;</p>
-			<p class="privacy">'.$atts['gdpr_text'].'</p>
+			<p class="privacy">'.$gdpr_info.'</p>
 		</div>
 		';
 	}
