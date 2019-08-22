@@ -25,15 +25,17 @@ class Create_Sendy_Forms extends Subscription_tools {
 
 	public function create_sendy_subform($atts = null) {
 
+		$extra_merge_field_name = get_option('fws_sendy_sec_field');
 		$atts = shortcode_atts(
 			array(
 				'title' => __( 'Subscribe now!', 'fws_sendy_subscribe' ),
 				'description' => __( 'Subscribe today and get future blog posts your email.', 'fws_sendy_subscribe' ),
 				'gdpr_text' => get_option('fws_sendy_gdpr_text'),
 				'btnlabel' => __('Subscribe', 'fws_sendy_subscribe'),
+				'extramergefield' => '',
 				'bs_icon' => '',
 				'fsize' => '',
-				'cotainer_class' => 'sendy-optin'
+				'container_class' => 'sendy-optin'
 			),
 			$atts
 		);
@@ -55,7 +57,7 @@ class Create_Sendy_Forms extends Subscription_tools {
 		}
 
 		return '
-		<div class="'.$atts['cotainer_class'].'">
+		<div class="'.$atts['container_class'].'">
 			<h3>'.$atts['title'].'</h3>
 			<p>'.$atts['description'].'</p>
 			<form id="fws-subscribeform" role="form" class="form-inline">
@@ -68,7 +70,8 @@ class Create_Sendy_Forms extends Subscription_tools {
 					<input type="text" class="form-control'.$field_size.'" placeholder="'.__( 'Your email address', 'fws_sendy_subscribe' ).'" name="email" tabindex="2" />
 				</div>
 				'.wp_nonce_field('fwssendy_subform', '_fwssendy_subnonce', true, false).'
-				<input type="hidden" name="action" value="subscribeform_action" />
+				<input type="hidden" name="action" value="sendy_subscribeform_action" />
+				<input type="hidden" name="'.$extra_merge_field_name.'" value="'.esc_attr($atts['extramergefield']).'" />
 				<button class="btn btn-primary sendy-subscr-fws'.$btn_size.'" tabindex="3" type="button">'.$btn_lbl.'</button>
 			</form>
 			<p id="fws-subscribeform-msg" class="error-message">&nbsp;</p>
@@ -104,7 +107,7 @@ class Create_Sendy_Forms extends Subscription_tools {
 					<input type="text" class="form-control'.$field_size.'" placeholder="'.__( 'Your email address', 'fws_sendy_subscribe' ).'" name="email" tabindex="1" />
 				</div>
 				'.wp_nonce_field('fwssendy_unsubform', '_fwssendy_unsubnonce', true, false).'
-				<input type="hidden" name="action" value="unsubscribe_action" />
+				<input type="hidden" name="action" value="sendy_unsubscribe_action" />
 				<button class="btn btn-primary sendy-unsub-fws'.$btn_size.'" tabindex="2" type="button">'.$atts['btnlabel'].'</button>
 			</form>
 			<p id="fws-subscribeform-msg" class="error-message">&nbsp;</p>

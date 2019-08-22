@@ -75,12 +75,12 @@ class Sendy_Plugin_Settings {
 					'placeholder'	=> ''
 				),
 				array(
-					'id' 			=> 'sec_name',
-					'label'			=> __( 'Secondary name field' , 'fws_sendy_subscribe' ),
-					'description'	=> __( 'Create a custom field like "First name" and enter the field name here.', 'fws_sendy_subscribe' ),
+					'id' 			=> 'sec_field',
+					'label'			=> __( 'Second merge field' , 'fws_sendy_subscribe' ),
+					'description'	=> __( 'Create a custom field like "First name" and enter the field name "Firstname" here.', 'fws_sendy_subscribe' ),
 					'type'			=> 'text',
 					'default'		=> '',
-					'placeholder'	=> 'FirstName'
+					'placeholder'	=> ''
 				),
 				array(
 					'id' 			=> 'include_css',
@@ -223,7 +223,7 @@ class Sendy_Plugin_Settings {
 			<h3>'.__( 'How to use?', 'fws_sendy_subscribe' ).'</h3>
 			<p>'.__( 'You can use a subscription form in every post (see setting above) or you can use the widget for  your theme\'s sidebar. It\'s also possible to add a shortcode to your pages and posts.', 'fws_sendy_subscribe' ).'</p>
 			<p><code>[FWSSendySubForm]</code></p>
-			<p><code>[FWSSendySubForm secname="FirstName" title="Subscribe today" description="Subscribe now and get future updates in your mailbox."]</code></p>';
+			<p><code>[FWSSendySubForm extramergefield="Firstname" title="Subscribe today" description="Subscribe now and get future updates in your mailbox."]</code></p>';
 		$html .= '</div>' . "\n";
 		echo $html;
 	}

@@ -43,20 +43,20 @@ class Subscription_tools {
 	}
 
 	public function init() {
-		load_plugin_textdomain( 'fws_sendy_subscribe', false, STFS_DIR . 'languages/' );
+		load_plugin_textdomain( 'fws_sendy_subscribe', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 
 		add_filter( 'the_content', array($this, 'add_form_to_content'), 20 );
 
 		add_action('wp_enqueue_scripts', array($this, 'add_assets'));
 
-		add_action( 'wp_ajax_subscribeform_action', array($this, 'subform_action_callback') );
-		add_action( 'wp_ajax_nopriv_subscribeform_action', array($this, 'subform_action_callback') );
+		add_action( 'wp_ajax_sendy_subscribeform_action', array($this, 'subform_action_callback') );
+		add_action( 'wp_ajax_nopriv_sendy_subscribeform_action', array($this, 'subform_action_callback') );
 
-		add_action( 'wp_ajax_unsubscribe_action', array($this, 'unsubscribe_action_callback') );
-		add_action( 'wp_ajax_nopriv_unsubscribe_action', array($this, 'unsubscribe_action_callback') );
+		add_action( 'wp_ajax_sendy_unsubscribe_action', array($this, 'unsubscribe_action_callback') );
+		add_action( 'wp_ajax_nopriv_sendy_unsubscribe_action', array($this, 'unsubscribe_action_callback') );
 
-		add_action('wp_ajax_mailmunch_action', array($this, 'process_mailmunch_request'));
-		add_action('wp_ajax_nopriv_mailmunch_action', array($this, 'process_mailmunch_request'));
+		add_action('wp_ajax_sendy_mailmunch_action', array($this, 'process_mailmunch_request'));
+		add_action('wp_ajax_nopriv_sendy_mailmunch_action', array($this, 'process_mailmunch_request'));
 
 		add_action('add_meta_boxes', array($this, 'add_custom_box'));
 		add_action('save_post', array($this, 'save_custom_box'));
