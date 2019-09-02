@@ -137,15 +137,15 @@ class Subscription_tools {
 				'list' => $list
 			);
 		} elseif ($action == 'subscriber_count') {
-			$action = '/api/subscribers/active-subscriber-count.php';
+			$action = 'api/subscribers/active-subscriber-count.php';
 			$post_array = array(
-				'list' => $list,
+				'list_id' => $list,
 				'api_key' => $api_key
 			);
 		} elseif ($action == 'subscriber_status') {
-			$action = '/api/subscribers/subscription-status.php';
+			$action = 'api/subscribers/subscription-status.php';
 			$post_array = array(
-				'list' => $list,
+				'list_id' => $list,
 				'api_key' => $api_key,
 				'email' => $data['email']
 			);

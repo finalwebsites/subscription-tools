@@ -9,16 +9,22 @@ class Create_Sendy_Forms extends Subscription_tools {
 		add_shortcode('getsendycount', array($this, 'get_sendy_list_count'));
 	}
 
-	public function get_sendy_list_count() {
+	public function get_sendy_list_count($atts = null) {
+		$atts = shortcode_atts(
+			array(
+				'addmore' => 0
+			),
+			$atts
+		);
 		$sendy_count = get_transient( 'fws_sendy_list_count' );
 		if ( false === $sendy_count  ) {
 			$result = $this->make_api_call(array(), 'subscriber_count');
-			if (is_int($result)) {
-				$sendy_count = $result;
+			if ((int)$result > 1) {
+				$sendy_count = $result + $atts['addmore'];
 			} else {
 				$sendy_count = 'n/a';
 			}
-		set_transient( 'fws_sendy_list_count', $sendy_count, DAY_IN_SECONDS );
+			set_transient( 'fws_sendy_list_count', $sendy_count, DAY_IN_SECONDS );
 		}
 		return $sendy_count;
 	}
