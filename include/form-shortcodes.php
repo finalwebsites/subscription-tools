@@ -4,9 +4,11 @@ class Create_Sendy_Forms extends Subscription_tools {
 
 	public function __construct() {
 		parent::__construct();
+
 		add_shortcode('FWSSendySubForm', array($this, 'create_sendy_subform'));
 		add_shortcode('FWSSendyUnsubscribe', array($this, 'unsubscribe_form'));
 		add_shortcode('getsendycount', array($this, 'get_sendy_list_count'));
+		add_shortcode('resubscribeSendy', array($this, 'resubscribe_button'));
 	}
 
 	public function get_sendy_list_count($atts = null) {
@@ -58,8 +60,8 @@ class Create_Sendy_Forms extends Subscription_tools {
 		}
 
 		if ($atts['gdpr_text'] != '') {
-
-			$gdpr_info = sprintf( wp_kses( $atts['gdpr_text'], array(  'a' => array( 'href' => array() ) ) ), esc_url( get_privacy_policy_url() ) );		} else {
+			$gdpr_info = sprintf( wp_kses( $atts['gdpr_text'], array(  'a' => array( 'href' => array() ) ) ), esc_url( get_privacy_policy_url() ) );
+		} else {
 			$gdpr_info = '';
 		}
 		return '
@@ -86,14 +88,14 @@ class Create_Sendy_Forms extends Subscription_tools {
 		';
 	}
 
-	public function unsubscribe_form() {
+	public function unsubscribe_form($atts = null) {
 		$atts = shortcode_atts(
 			array(
 				'title' => __( 'Unsubscribe from your mailing list', 'fws_sendy_subscribe' ),
 				'description' => __( 'Enter your email address and click the button to unsubscribe.', 'fws_sendy_subscribe' ),
 				'btnlabel' => __('Unsubscribe', 'fws_sendy_subscribe'),
 				'fsize' => '',
-				'cotainer_class' => 'sendy-optout'
+				'container_class' => 'sendy-optout'
 			),
 			$atts
 		);
@@ -120,4 +122,44 @@ class Create_Sendy_Forms extends Subscription_tools {
 		</div>
 		';
 	}
+	public function resubscribe_button($atts = null) {
+		$atts = shortcode_atts(
+			array(
+				'btnlabel' => __('Subscribe again', 'fws_sendy_subscribe'),
+				'btnsize' => 'lg',
+				're_container_class' => 'sendy-re-optin',
+				'subscribe_slug' => 'subscribe'
+			),
+			$atts
+		);
+		$valid_request = true;
+		$html = '
+			<div class="'.$atts['re_container_class'].'">';
+		if (empty($_GET['email']) || empty($_GET['listID'])) {
+			$valid_request = false;
+		} else {
+			$default_list = get_option('fws_sendy_list_id');
+			$email = sanitize_email($_POST['email']);
+			$list = sanitize_text_field($_GET['listID']);
+			if ($default_list != $list) {
+				$valid_request = false;
+			} else {
+				$html .= '
+				<form id="fws-resubscribeform" role="form">
+					'.wp_nonce_field('fwssendy_resubform', '_fwssendy_resubnonce', true, false).'
+					<input type="hidden" name="action" value="sendy_resubscribe_action" />
+					<input type="hidden" name="email" value="'.$email.'" />
+					<button class="btn btn-primary sendy-unsub-fws btn-'.$atts['btnsize'].'" type="button">'.$atts['btnlabel'].'</button>
+				</form>';
+			}
+		}
+		if (!$valid_request) {
+			$html .= '
+				<a href="'.home_url('/'.$atts['subscribe_slug'].'/').'" class="btn btn-primary sendy-unsub-fws btn-'.$atts['btnsize'].'">'.$atts['btnlabel'].'</a>';
+		}
+		$html .= '
+			</div>';
+		return $html;
+	}
+
 }
