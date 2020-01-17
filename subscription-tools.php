@@ -155,6 +155,12 @@ class Subscription_tools {
 				'email' => $data['email'],
 				'boolean' => 'true'
 			);
+		} elseif ($action == 'resubscribe') {
+			$post_array = array(
+				'list_id' => $list,
+				'api_key' => $api_key,
+				'email' => $data['email']
+			);
 		}
 		$postdata = http_build_query($post_array);
 		$ch = curl_init();

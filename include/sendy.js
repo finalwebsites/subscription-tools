@@ -77,4 +77,30 @@ jQuery(document).ready(function($) {
 			}
 		});
 	});
+
+	$('.sendy-resub-fws').click(function() {
+		var subform = $(this).closest('form');
+		var formID = subform.attr('id');
+		var msgID = $('#' + formID + ' + .error-message').attr('id');
+		$.ajax({
+			type: 'POST',
+			url: msp_ajax_object.ajax_url,
+			data: subform.serialize(),
+			dataType: 'json',
+			success: function(response) {
+				//alert(response);
+				if (response.status == 'success') {
+					if (msp_ajax_object.googleanalytics) {
+						ga('send', 'pageview', msp_ajax_object.googleanalytics);
+					}
+					if (msp_ajax_object.clickyanalytics) {
+						clicky.goal( msp_ajax_object.clickyanalytics );
+						clicky.pause( 500 );
+					}
+					formID.html('');
+					$('#' + msgID).html(response.errmessage);
+				}
+			}
+		});
+	});
 });

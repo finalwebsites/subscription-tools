@@ -149,8 +149,9 @@ class Create_Sendy_Forms extends Subscription_tools {
 					'.wp_nonce_field('fwssendy_resubform', '_fwssendy_resubnonce', true, false).'
 					<input type="hidden" name="action" value="sendy_resubscribe_action" />
 					<input type="hidden" name="email" value="'.$email.'" />
-					<button class="btn btn-primary sendy-unsub-fws btn-'.$atts['btnsize'].'" type="button">'.$atts['btnlabel'].'</button>
-				</form>';
+					<button class="btn btn-primary sendy-resub-fws btn-'.$atts['btnsize'].'" type="button">'.$atts['btnlabel'].'</button>
+				</form>
+				<p id="fws-resubscribeform-msg" class="error-message">&nbsp;</p>';
 			}
 		}
 		if (!$valid_request) {
