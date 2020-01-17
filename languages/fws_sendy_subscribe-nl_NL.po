@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Sendy Subscriptions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-22 08:23+0000\n"
-"PO-Revision-Date: 2019-08-22 08:28+0000\n"
+"POT-Creation-Date: 2020-01-17 07:43+0000\n"
+"PO-Revision-Date: 2020-01-17 07:44+0000\n"
 "Last-Translator: Olaf Lederer <admin@finalwebsites.com>\n"
 "Language-Team: Nederlands\n"
 "Language: nl_NL\n"
@@ -12,58 +12,108 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.3.0; wp-5.2.2"
+"X-Loco-Version: 2.3.1; wp-5.3.2"
 
-#: include/options.php:132
-#, fuzzy
-msgid ""
-"Add here the goal ID for a manual goal you've already defined in Clicky."
-msgstr ""
-"Plaats hier de ID van het manuele doel dat je eerder hebt gedefinieerd in "
-"Clicky."
+#: subscription-tools.php:100
+msgid "Loading..."
+msgstr "Bezig…"
 
-#: include/options.php:140
-msgid ""
-"Add here the secret string which you can use to protect your Sendy app "
-"against SPAM submissions."
-msgstr ""
-"Plaats hier de geheime tekst die wordt gebruikt in Sendy om je tegen SPAM te "
-"beschermen."
+#: subscription-tools.php:101
+msgid "Please enter your name and email address."
+msgstr "Vul je naam en e-mailadres in."
 
-#: include/options.php:207
-msgid "All"
-msgstr "Alle"
+#: subscription-tools.php:102 subscription-tools.php:263
+msgid "Please enter your email address."
+msgstr "Vul je e-mailadres in."
 
-#: subscription-tools.php:200
+#: subscription-tools.php:103
+msgid "The entered email address is invalid."
+msgstr "Het ingevoerde e-mailadres is ongeldig."
+
+#: subscription-tools.php:191
+msgid "Both fields are required to enter."
+msgstr "Beide velden zijn vereist om in te voeren."
+
+#: subscription-tools.php:194 subscription-tools.php:234
+#: subscription-tools.php:266
+msgid "Verification error, try again."
+msgstr "Verificatiefout, probeer het opnieuw."
+
+#: subscription-tools.php:212
+msgid "Thanks, for joining our mailing list!"
+msgstr "Bedankt, voor je inschrijving!"
+
+#: subscription-tools.php:214 subscription-tools.php:245
+msgid "You're already subscribed to this list."
+msgstr "Je bent al geabonneerd op deze lijst."
+
+#: subscription-tools.php:216 subscription-tools.php:247
 msgid "An unknown error occurred."
-msgstr "Er is een onbekende fout ontstaan."
+msgstr "Er deed zich een onbekende fout voor."
+
+#: subscription-tools.php:243
+msgid "Thanks, for joining again!"
+msgstr "Bedankt, welkom terug!"
+
+#: subscription-tools.php:275
+msgid "Your email address is removed from our mailing list."
+msgstr "Je e-mailadres wordt verwijderd van onze lijst."
+
+#: subscription-tools.php:277
+msgid "Your email address is not on our list."
+msgstr "Je e-mailadres staat niet op onze mailinglijst."
+
+#: subscription-tools.php:326
+msgid "Hide Sendy form"
+msgstr "Verberg Sendy form"
+
+#. Name of the plugin
+#: include/widget.php:19
+msgid "Sendy Subscriptions"
+msgstr "Sendy Subscriptions"
+
+#: include/widget.php:21
+msgid ""
+"Use this widget to add a simple Sendy subscription form to the different "
+"sidebars."
+msgstr ""
+"Gebruik dit widget voor het weergeven van een eenvoudige Sendy inschrijfbox "
+"binnen de verschillende zijbalken."
+
+#: include/widget.php:43 include/widget.php:44 include/form-shortcodes.php:73
+#: include/form-shortcodes.php:74
+msgid "Your first name"
+msgstr "Je voornaam"
+
+#: include/widget.php:47 include/widget.php:48 include/form-shortcodes.php:77
+#: include/form-shortcodes.php:78 include/form-shortcodes.php:114
+#: include/form-shortcodes.php:115
+msgid "Your email address"
+msgstr "Je e-mailadres"
+
+#: include/widget.php:52 include/form-shortcodes.php:42
+msgid "Subscribe"
+msgstr "Inschrijven"
+
+#: include/widget.php:83
+msgid "Title:"
+msgstr "Titel:"
+
+#: include/widget.php:86
+msgid "Optional: Add some promotional text (HTML allowed)."
+msgstr "Optioneel: Plaats een promotionele tekst (HTML is mogelijk)"
 
 #: include/widget.php:90
 msgid "Automatically add paragraphs"
 msgstr "Automatisch paragraaf regels toevoegen"
 
-#: subscription-tools.php:177
-msgid "Both fields are required to enter."
-msgstr "Beide velden zijn verplicht om in te vullen."
+#: include/options.php:34
+msgid "Subscription tools Settings"
+msgstr "Sendy Subscriptions Instellingen"
 
-#: include/options.php:80
-msgid ""
-"Create a custom field like \"First name\" and enter the field name "
-"\"Firstname\" here."
-msgstr ""
-
-#: include/options.php:72
-msgid "Create a mailing list and enter the ID here."
-msgstr "Maak een mailinglijst aan en voer hier het ID nummer in."
-
-#: include/form-shortcodes.php:88
-msgid "Enter your email address and click the button to unsubscribe."
-msgstr ""
-"Voer je e-mailadres in en klik dan op de button om je uit te schrijven."
-
-#: include/options.php:115
-msgid "GDPR text"
-msgstr "AVG/GDPR tekst"
+#: include/options.php:35
+msgid "Subscription tools"
+msgstr "Subscription tools"
 
 #: include/options.php:50
 msgid "General"
@@ -73,29 +123,37 @@ msgstr "Algemeen"
 msgid "General settings and options for the Sendy plugin."
 msgstr "Algemene instellingen en opties voor de Sendy plugin."
 
-#: subscription-tools.php:278
-msgid "Hide Sendy form"
-msgstr "Verberg Sendy form"
+#: include/options.php:55
+msgid "Sendy API Key"
+msgstr "Sendy API Key"
 
-#: include/options.php:223
-msgid "How to use?"
-msgstr "Hoe te gebruiken?"
+#: include/options.php:63
+msgid "Sendy URL"
+msgstr "Sendy URL"
 
-#. Author URI of the plugin
-msgid "https://www.olaflederer.com/"
-msgstr "https://www.olaflederer.com/"
+#: include/options.php:64
+msgid "The URL from your Sendy application."
+msgstr "De URL van je Sendy applicatie."
 
-#. URI of the plugin
-msgid "https://www.web-development-blog.com/"
+#: include/options.php:71
+msgid "Sendy List ID"
+msgstr "Sendy List ID"
+
+#: include/options.php:72
+msgid "Create a mailing list and enter the ID here."
+msgstr "Maak een mailinglijst aan en voer hier het ID nummer in."
+
+#: include/options.php:79
+msgid "Second merge field"
+msgstr "Extra naam veld"
+
+#: include/options.php:80
+msgid ""
+"Create a custom field like \"First name\" and enter the field name "
+"\"Firstname\" here."
 msgstr ""
-
-#: include/options.php:101
-msgid "Incl. JS/CSS for categories"
-msgstr "JS/CSS voor categorieën bijvoegen"
-
-#: include/options.php:108
-msgid "Incl. JS/CSS sitewide"
-msgstr "JS/CSS overal bijvoegen"
+"Maak een extra veld aan, bijvoorbeeld \"First name\" en plaats de veldnaam "
+"\"Firstname\" hier."
 
 #: include/options.php:87
 msgid "Include CSS"
@@ -106,29 +164,42 @@ msgid "Include the plugin's stylesheet for your subscribtion forms."
 msgstr ""
 "Het stijlbestand voor de inschrijvingsformulieren van de plugin gebruiken."
 
-#. Description of the plugin
+#: include/options.php:94
+msgid "Show for all posts"
+msgstr "Toon voor alle berichten"
+
+#: include/options.php:95
 msgid ""
-"Increase the count of new subscribers for your blog or website by using "
-"Sendy and a professional subscription form."
+"Use this checkbox to add the subscription form at the end of each blog post"
 msgstr ""
-"Verhoog het aantal inschrijvingen voor je blog of website door het gebruik "
-"van Sendy en een professioneel inschrijfformulier."
+"Activeer deze checkbox om het inschrijfformulier aan het einde van elke "
+"blogpost te plaatsen"
 
-#: subscription-tools.php:98
-msgid "Loading..."
-msgstr "Laden..."
+#: include/options.php:101
+msgid "Incl. JS/CSS for categories"
+msgstr "JS/CSS voor categorieën bijvoegen"
 
-#: include/options.php:139
-msgid "Mailmunch secret"
-msgstr "Mailmunch secret"
+#: include/options.php:102
+msgid ""
+"Use this option if you like to use the form on your blog categorie pages."
+msgstr ""
+"Gebruik deze optie wanneer je het formulier ook op de blogcategorie pagina's "
+"wil kunnen gebruiken."
 
-#. Author of the plugin
-msgid "Olaf Lederer"
-msgstr "Olaf Lederer"
+#: include/options.php:108
+msgid "Incl. JS/CSS sitewide"
+msgstr "JS/CSS overal bijvoegen"
 
-#: include/widget.php:86
-msgid "Optional: Add some promotional text (HTML allowed)."
-msgstr "Optioneel: Plaats een promotionele tekst (HTML is mogelijk)"
+#: include/options.php:109
+msgid ""
+"Use this option if you like to use the form on all your posts and pages."
+msgstr ""
+"Gebruik deze optie wanneer je het formulier op elke pagina en post wil "
+"kunnen gebruiken."
+
+#: include/options.php:115
+msgid "GDPR text"
+msgstr "AVG/GDPR tekst"
 
 #: include/options.php:116
 msgid ""
@@ -139,99 +210,9 @@ msgstr ""
 "URL van de privacyverklaring welke je kan instellen via \"Instellingen > "
 "Privacy\""
 
-#: subscription-tools.php:100 subscription-tools.php:215
-msgid "Please enter your email address."
-msgstr "A.u.b. je e-mailadres invoeren."
-
-#: subscription-tools.php:99
-msgid "Please enter your name and email address."
-msgstr "A.u.b. je naam en e-mailadres invoeren."
-
-#: include/options.php:218
-msgid "Save Settings"
-msgstr "Instellingen opslaan"
-
-#: include/options.php:79
-msgid "Second merge field"
-msgstr ""
-
-#: include/options.php:55
-msgid "Sendy API Key"
-msgstr "Sendy API Key"
-
-#: include/options.php:71
-msgid "Sendy List ID"
-msgstr "Sendy List ID"
-
-#. Name of the plugin
-#: include/widget.php:19
-msgid "Sendy Subscriptions"
-msgstr "Sendy Subscriptions"
-
-#: include/options.php:63
-msgid "Sendy URL"
-msgstr ""
-"Sendy URL\n"
-
-#: include/options.php:94
-msgid "Show for all posts"
-msgstr "Toon voor alle berichten"
-
-#: include/widget.php:52 include/form-shortcodes.php:35
-msgid "Subscribe"
-msgstr "Inschrijven"
-
-#: include/form-shortcodes.php:32
-msgid "Subscribe now!"
-msgstr "Nu inschrijven!"
-
-#: include/form-shortcodes.php:33
-msgid "Subscribe today and get future blog posts your email."
-msgstr ""
-"Schrijf je nog vandaag in en ontvang toekomstige blogposts in je mailbox."
-
-#: include/options.php:35
-msgid "Subscription tools"
-msgstr ""
-
-#. Name of the plugin
-msgid "Subscription tools for Sendy"
-msgstr ""
-
-#: include/options.php:34
-msgid "Subscription tools Settings"
-msgstr ""
-
-#: include/options.php:203
-msgid "Subscriptions tools"
-msgstr ""
-
-#: subscription-tools.php:196
-msgid "Thanks, for joining our mailing list!"
-msgstr "Bedankt voor de inschrijving!"
-
-#: subscription-tools.php:101
-msgid "The entered email address is invalid."
-msgstr "De ingevoerde e-mailadres is niet geldig."
-
-#: include/options.php:64
-msgid "The URL from your Sendy application."
-msgstr "De URL van je Sendy applicatie."
-
-#: include/widget.php:83
-msgid "Title:"
-msgstr "Titel:"
-
-#: include/options.php:204
-#, php-format
-msgid ""
-"To use this plugin you need a working Sendy application. Buy your own copy "
-"here: <a href=\"%s\" target=\"_blank\">Sendy, self hosted email newsletter "
-"application</a>."
-msgstr ""
-"Om deze plugin te gebruiken, is een werkende Sendy applicatie vereist. Koop "
-"je eigen kopie hier:  <a href=\"%s\" target=\"_blank\">Sendy, self hosted e-"
-"mail nieuwsbrief applicatie</a>."
+#: include/options.php:123
+msgid "Track in Google Analytics"
+msgstr "In Google Analytics tracken"
 
 #: include/options.php:124
 msgid ""
@@ -245,50 +226,51 @@ msgstr ""
 msgid "Track in Clicky"
 msgstr "In Clicky tracken"
 
-#: include/options.php:123
-msgid "Track in Google Analytics"
-msgstr "In Google Analytics tracken"
-
-#: include/form-shortcodes.php:89
-msgid "Unsubscribe"
-msgstr "Uitschrijven"
-
-#: include/form-shortcodes.php:87
-msgid "Unsubscribe from your mailing list"
-msgstr "Uitschrijven van onze mailinglijst"
-
-#: include/options.php:95
+#: include/options.php:132
 msgid ""
-"Use this checkbox to add the subscription form at the end of each blog post"
+"Add here the goal ID for a manual goal you've already defined in Clicky."
 msgstr ""
-"Activeer deze checkbox om het inschrijfformulier aan het einde van elke "
-"blogpost te plaatsen"
+"Plaats hier de ID van het manuele doel dat je eerder hebt gedefinieerd in "
+"Clicky."
 
-#: include/options.php:109
+#: include/options.php:139
+msgid "Mailmunch secret"
+msgstr "Mailmunch secret"
+
+#: include/options.php:140
 msgid ""
-"Use this option if you like to use the form on all your posts and pages."
+"Add here the secret string which you can use to protect your Sendy app "
+"against SPAM submissions."
 msgstr ""
-"Gebruik deze optie wanneer je het formulier op elke pagina en post wil "
-"kunnen gebruiken."
+"Plaats hier de geheime tekst die wordt gebruikt in Sendy om je tegen SPAM te "
+"beschermen."
 
-#: include/options.php:102
+#: include/options.php:203
+msgid "Subscriptions tools"
+msgstr "Subscriptions tools"
+
+#: include/options.php:204
+#, php-format
 msgid ""
-"Use this option if you like to use the form on your blog categorie pages."
+"To use this plugin you need a working Sendy application. Buy your own copy "
+"here: <a href=\"%s\" target=\"_blank\">Sendy, self hosted email newsletter "
+"application</a>."
 msgstr ""
-"Gebruik deze optie wanneer je het formulier ook op de blogcategorie pagina's "
-"wil kunnen gebruiken."
+"Om deze plugin te gebruiken, is een werkende Sendy applicatie vereist. Koop "
+"je eigen kopie hier:  <a href=\"%s\" target=\"_blank\">Sendy, self hosted e-"
+"mail nieuwsbrief applicatie</a>."
 
-#: include/widget.php:21
-msgid ""
-"Use this widget to add a simple Sendy subscription form to the different "
-"sidebars."
-msgstr ""
-"Gebruik dit widget voor de weergave van een eenvoudige Sendy inschrijf box "
-"in de verschillende zijbalken. "
+#: include/options.php:207
+msgid "All"
+msgstr "Alle"
 
-#: subscription-tools.php:180 subscription-tools.php:218
-msgid "Verification error, try again."
-msgstr "Verificatie fout, probeer opnieuw."
+#: include/options.php:218
+msgid "Save Settings"
+msgstr "Instellingen opslaan"
+
+#: include/options.php:223
+msgid "How to use?"
+msgstr "Hoe te gebruiken?"
 
 #: include/options.php:224
 msgid ""
@@ -300,25 +282,52 @@ msgstr ""
 "instelling boven) of je gebruikt het widget in de zijbalk van he thema. Het "
 "is ook mogelijk om een shortcode in je pagina's en posts te plaatsen."
 
-#: subscription-tools.php:198
-msgid "You're already subscribed to this list."
-msgstr "Je bent al ingeschreven voor deze mailinglijst."
+#: include/form-shortcodes.php:39
+msgid "Subscribe now!"
+msgstr "Meer tips ontvangen?"
 
-#: include/widget.php:47 include/widget.php:48 include/form-shortcodes.php:70
-#: include/form-shortcodes.php:71 include/form-shortcodes.php:107
-#: include/form-shortcodes.php:108
-msgid "Your email address"
-msgstr "Je e-mailadres"
-
-#: subscription-tools.php:229
-msgid "Your email address is not on our list."
-msgstr "Je e-mailadres staat niet op onze mailinglijst."
-
-#: subscription-tools.php:227
-msgid "Your email address is removed from our mailing list."
+#: include/form-shortcodes.php:40
+msgid "Subscribe today and get future blog posts your email."
 msgstr ""
+"Schrijf je vandaag nog in en ontvang toekomstige blogposts in je mailbox."
 
-#: include/widget.php:43 include/widget.php:44 include/form-shortcodes.php:66
-#: include/form-shortcodes.php:67
-msgid "Your first name"
-msgstr "Je voornaam"
+#: include/form-shortcodes.php:94
+msgid "Unsubscribe from your mailing list"
+msgstr "Uitschrijven van onze mailinglijst"
+
+#: include/form-shortcodes.php:95
+msgid "Enter your email address and click the button to unsubscribe."
+msgstr ""
+"Voer je e-mailadres in en klik dan op de button om je uit te schrijven."
+
+#: include/form-shortcodes.php:96
+msgid "Unsubscribe"
+msgstr "Uitschrijven"
+
+#: include/form-shortcodes.php:128
+msgid "Subscribe again"
+msgstr "Opnieuw aanmelden"
+
+#. Name of the plugin
+msgid "Subscription tools for Sendy"
+msgstr "Subscription tools voor Sendy"
+
+#. Description of the plugin
+msgid ""
+"Increase the count of new subscribers for your blog or website by using "
+"Sendy and a professional subscription form."
+msgstr ""
+"Verhoog het aantal inschrijvingen voor je blog of website door het gebruik "
+"van Sendy en een professioneel inschrijfformulier."
+
+#. URI of the plugin
+msgid "https://www.web-development-blog.com/"
+msgstr "https://www.web-development-blog.com/"
+
+#. Author of the plugin
+msgid "Olaf Lederer"
+msgstr "Olaf Lederer"
+
+#. Author URI of the plugin
+msgid "https://www.olaflederer.com/"
+msgstr "https://www.olaflederer.com/"

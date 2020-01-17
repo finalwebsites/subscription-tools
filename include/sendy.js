@@ -82,13 +82,15 @@ jQuery(document).ready(function($) {
 		var subform = $(this).closest('form');
 		var formID = subform.attr('id');
 		var msgID = $('#' + formID + ' + .error-message').attr('id');
+		$('#' + msgID).html('<img src="' + msp_ajax_object.plugin_base_path + 'include/loading.gif" alt="' + msp_ajax_object.js_alt_loading + '">');
+		//console.log(msgID);
 		$.ajax({
 			type: 'POST',
 			url: msp_ajax_object.ajax_url,
 			data: subform.serialize(),
 			dataType: 'json',
 			success: function(response) {
-				//alert(response);
+				//console.log(response);
 				if (response.status == 'success') {
 					if (msp_ajax_object.googleanalytics) {
 						ga('send', 'pageview', msp_ajax_object.googleanalytics);
@@ -97,7 +99,7 @@ jQuery(document).ready(function($) {
 						clicky.goal( msp_ajax_object.clickyanalytics );
 						clicky.pause( 500 );
 					}
-					formID.html('');
+					$('#' + formID).empty();
 					$('#' + msgID).html(response.errmessage);
 				}
 			}

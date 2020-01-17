@@ -55,8 +55,11 @@ class Subscription_tools {
 		add_action( 'wp_ajax_sendy_unsubscribe_action', array($this, 'unsubscribe_action_callback') );
 		add_action( 'wp_ajax_nopriv_sendy_unsubscribe_action', array($this, 'unsubscribe_action_callback') );
 
-		add_action('wp_ajax_sendy_mailmunch_action', array($this, 'process_mailmunch_request'));
-		add_action('wp_ajax_nopriv_sendy_mailmunch_action', array($this, 'process_mailmunch_request'));
+		add_action('wp_ajax_mailmunch_action', array($this, 'process_mailmunch_request'));
+		add_action('wp_ajax_nopriv_mailmunch_action', array($this, 'process_mailmunch_request'));
+
+		add_action('wp_ajax_sendy_resubscribe_action', array($this, 'resubscribe_action_callback'));
+		add_action('wp_ajax_nopriv_sendy_resubscribe_action', array($this, 'resubscribe_action_callback'));
 
 		add_action('add_meta_boxes', array($this, 'add_custom_box'));
 		add_action('save_post', array($this, 'save_custom_box'));

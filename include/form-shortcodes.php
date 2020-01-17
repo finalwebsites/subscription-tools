@@ -135,12 +135,12 @@ class Create_Sendy_Forms extends Subscription_tools {
 		$valid_request = true;
 		$html = '
 			<div class="'.$atts['re_container_class'].'">';
-		if (empty($_GET['email']) || empty($_GET['listID'])) {
+		if (empty($_GET['email']) || empty($_GET['listid'])) {
 			$valid_request = false;
 		} else {
 			$default_list = get_option('fws_sendy_list_id');
-			$email = sanitize_email($_POST['email']);
-			$list = sanitize_text_field($_GET['listID']);
+			$email = sanitize_email($_GET['email']);
+			$list = sanitize_text_field($_GET['listid']);
 			if ($default_list != $list) {
 				$valid_request = false;
 			} else {
