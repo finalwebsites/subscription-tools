@@ -18,6 +18,7 @@ Email marketing is still one of the best ways to drive traffic to your website. 
 = These are the features: =
 
 * Add the subscription form to any page or post by using a shortcode or just include the form after every blog post
+* NEW! Resubscribe button
 * Add the form into your blog's sidebar using the widget
 * Use the MailMunch connector for a better integration between MailMunch and Sendy
 * Using nonces for simple form value validation
